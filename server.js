@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const bodyParser = require('body-parser');
 
 app.listen(process.env.PORT || 3000, () => {
@@ -17,7 +18,9 @@ app.get('/', (req, res) => {
 });
 
 // List all posts
-app.get('/posts', (req, res) => {});
+app.get('/posts', (req, res) => {
+   res.render('posts.ejs', { posts: 'http://jsonplaceholder.typicode.com/posts' });
+});
 
 // Show the search form
 app.get('/search', (req, res) => {
