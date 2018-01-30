@@ -24,8 +24,10 @@ app.get('/posts', (req, res) => {
 
 // Show the search form
 app.get('/search', (req, res) => {
-   res.render('search.ejs', { post: '' });
+   res.render('search.ejs', { post: 'http://jsonplaceholder.typicode.com/posts' + '=?' + req.title });
 });
 
 // Find all comments for post
-app.post('/search', (req, res) => {});
+app.post('/search', (req, res) => {
+  res.render('search_result.ejs', { comments: 'http://jsonplaceholder.typicode.com/posts' + '=?' + req.title + '/comments' });
+});

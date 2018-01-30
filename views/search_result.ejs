@@ -7,6 +7,16 @@
 </head>
 <body>
   <h2>All Comments</h2>
+  
+  <ul class="quotes">
+    <% for(var i=0; i<comments.length; i++) {%>
+      <li class="quote">
+        <span><%= comments[i].title %>: </span>
+        <span><%= comments[i].body %></span>
+      </li>
+    <% } %>
+    </ul>
+  
 
 </body>
 </html>
